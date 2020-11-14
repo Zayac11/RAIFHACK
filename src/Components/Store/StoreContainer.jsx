@@ -4,7 +4,16 @@ import Store from "./Store";
 import {withRouter} from "react-router-dom";
 import {getStoreData} from "../../Redux/store-reducer";
 
+
+
 class StoreContainer extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
 
     componentDidMount() {
         const storeId = this.props.match.params.id

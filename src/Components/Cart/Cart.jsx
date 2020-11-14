@@ -16,11 +16,12 @@ const Cart = (props) => {
 
             <div className={s.cartItemsContainer}>
 
-                {props.items.map(i => <CartItem addItemCount={props.addItemCount}
-                                                deleteItem={props.deleteItem}
-                                                removeItemsCount={props.removeItemsCount}
-                                                id={i.id} key={i.id} name={i.name} count={i.count}
-                                                price={i.price} img={i.img} />)}
+                {props.items.map(i => i.isPicked && <CartItem addItemCount={props.addItemCount}
+                                                    deleteItem={props.deleteItem}
+                                                    removeItemsCount={props.removeItemsCount}
+                                                    id={i.id} key={i.id} name={i.name} count={i.count}
+                                                    price={i.price} img={i.img} />)}
+
 
                 <div className={s.pay}>
                     <div className={s.total}>
