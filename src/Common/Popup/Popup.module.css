@@ -1,0 +1,11 @@
+.CustomModal {
+    background-color: #6c757d;
+    color: #fff;
+    position: relative;
+    max-width: 550px;
+    min-width: 320px;
+    width: auto;
+    height: 100%;
+    padding: 18px;
+    border-radius: 5px;
+}

@@ -15,7 +15,9 @@ const Top = (props) => {
             </div>
             <div className={s.cart}>
                 <div className={s.checked}></div>
-                <img src={cart} alt='cart'/>
+                <div className={s.cartContainer}>
+                    <img src={cart} alt='cart'/>
+                </div>
 
             </div>
         </div>

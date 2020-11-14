@@ -7,6 +7,8 @@ import plus from '../../Assets/images/plus.png'
 
 const Product = (props) => {
 
+    // const [bIsModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <div className={s.main}>
 
@@ -45,6 +47,14 @@ const Product = (props) => {
                     Перейти в магазин
                 </NavLink>
             </div>
+
+            {/*<Modal*/}
+            {/*    center*/}
+            {/*    className={s.CustomModal}*/}
+            {/*    closeModal={() => setIsModalOpen(false)}*/}
+            {/*    open={bIsModalOpen}>*/}
+            {/*    <Popup />*/}
+            {/*</Modal>*/}
 
         </div>
     )
