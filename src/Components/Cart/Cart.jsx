@@ -15,16 +15,19 @@ const Cart = (props) => {
             </div>
 
             <div className={s.cartItemsContainer}>
-                <CartItem />
-                <CartItem />
-                <CartItem />
+
+                {props.items.map(i => <CartItem addItemCount={props.addItemCount}
+                                                deleteItem={props.deleteItem}
+                                                removeItemsCount={props.removeItemsCount}
+                                                id={i.id} key={i.id} name={i.name} count={i.count}
+                                                price={i.price} img={i.img} />)}
 
                 <div className={s.pay}>
                     <div className={s.total}>
                         Итог:
                     </div>
                     <div className={s.total}>
-                        750р
+                        {props.totalPrice}р
                     </div>
                 </div>
 

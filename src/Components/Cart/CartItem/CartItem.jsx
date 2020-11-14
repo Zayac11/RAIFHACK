@@ -8,24 +8,29 @@ const CartItem = (props) => {
     return (
         <div className={s.itemContainer}>
             <div className={s.itemImg}>
-                <img src={add} alt="item"/>
+                <img src={props.img} alt="item"/>
             </div>
 
             <div className={s.content}>
                 <div className={s.title}>
-                    Название
+                    {props.name}
                 </div>
                 <div className={s.setting}>
                     <div className={s.count}>
-                        <button><img src={minus} alt="minus"/></button> 1 <button><img src={add} alt="plus"/></button>
+                        {
+                            props.count === 0 ? <button disabled onClick={ () => props.removeItemsCount(props.id)}><img src={minus} alt="minus"/></button>
+                            : <button onClick={ () => props.removeItemsCount(props.id)}><img src={minus} alt="minus"/></button>
+                        }
+                        {props.count}
+                        <button onClick={ () => props.addItemCount(props.id)}><img src={add} alt="plus"/></button>
                     </div>
                     <div className={s.price}>
-                        100р
+                        {props.price}р
                     </div>
                 </div>
             </div>
 
-            <button className={s.deleteItem}>
+            <button onClick={() => props.deleteItem(props.id)} className={s.deleteItem}>
                 <img src={cross} alt="delete item"/>
             </button>
 
