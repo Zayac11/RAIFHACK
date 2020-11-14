@@ -1,0 +1,15 @@
+.store {
+
+}
+
+.title {
+    margin: 10px auto 20px;
+    text-align: center;
+}
+
+.itemsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
