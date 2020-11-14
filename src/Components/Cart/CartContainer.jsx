@@ -53,8 +53,7 @@ class CartContainer extends React.Component {
 
     }
 
-    addItemCount(id) {
-
+    addItemCount(id, countPrice) {
         this.setState({
             items: this.state.items.map(item => item.id === id ?
                 ({
@@ -62,13 +61,11 @@ class CartContainer extends React.Component {
                     count: item.count + 1,
                 }): {...item}
             ),
-
-            totalPrice: this.state.items.map(item => item.id === id && item.price) + this.state.totalPrice
-
+            totalPrice: countPrice + this.state.totalPrice
         })
     }
 
-    removeItemsCount(id) {
+    removeItemsCount(id, countPrice) {
         this.setState({
             items: this.state.items.map(item => item.id === id && item.count > 0 ?
                 ({
@@ -77,12 +74,12 @@ class CartContainer extends React.Component {
                 }): {...item}
             ),
 
-            totalPrice: this.state.totalPrice - this.state.items[id].price
+            totalPrice: this.state.totalPrice - countPrice
 
         })
     }
 
-    deleteItem(id) {
+    deleteItem(id, countPrice, count) {
         this.setState({
             items: this.state.items.filter(
                 (i) => {
@@ -90,7 +87,7 @@ class CartContainer extends React.Component {
                 }
             ),
 
-            totalPrice: this.state.totalPrice - this.state.items[id].count * this.state.items[id].price
+            totalPrice: this.state.totalPrice - count * countPrice
 
         })
     }

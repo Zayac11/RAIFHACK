@@ -5,6 +5,7 @@ import cross from '../../../Assets/images/cross.png'
 import s from './CartItem.module.css'
 
 const CartItem = (props) => {
+
     return (
         <div className={s.itemContainer}>
             <div className={s.itemImg}>
@@ -18,11 +19,11 @@ const CartItem = (props) => {
                 <div className={s.setting}>
                     <div className={s.count}>
                         {
-                            props.count === 0 ? <button disabled onClick={ () => props.removeItemsCount(props.id)}><img src={minus} alt="minus"/></button>
-                            : <button onClick={ () => props.removeItemsCount(props.id)}><img src={minus} alt="minus"/></button>
+                            props.count === 0 ? <button disabled><img src={minus} alt="minus"/></button>
+                            : <button onClick={ () => props.removeItemsCount(props.id, props.price)}><img src={minus} alt="minus"/></button>
                         }
                         {props.count}
-                        <button onClick={ () => props.addItemCount(props.id)}><img src={add} alt="plus"/></button>
+                        <button onClick={ () => props.addItemCount(props.id, props.price)}><img src={add} alt="plus"/></button>
                     </div>
                     <div className={s.price}>
                         {props.price}р
@@ -30,7 +31,7 @@ const CartItem = (props) => {
                 </div>
             </div>
 
-            <button onClick={() => props.deleteItem(props.id)} className={s.deleteItem}>
+            <button onClick={() => props.deleteItem(props.id, props.price, props.count)} className={s.deleteItem}>
                 <img src={cross} alt="delete item"/>
             </button>
 
