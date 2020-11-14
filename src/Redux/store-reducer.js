@@ -8,44 +8,46 @@ const ADD_ITEM_COUNT = 'ADD_ITEM_COUNT'
 const GET_STORE_DATA = 'GET_STORE_DATA'
 const REMOVE_ITEMS_COUNT = 'REMOVE_ITEM_COUNT'
 const DELETE_ITEM = 'DELETE_ITEM'
+const TOGGLE_IS_CHECKING = 'TOGGLE_IS_CHECKING'
 
 let initialState = {
     id: 0,
     name: "",
     email: "",
     totalPrice: 0,
+    isChecked: false, //Проверил ли пользователь карзину
     items: [
         {
+            isPicked: false,
             id: 0,
             name: "Алмазный меч",
             count: 0,
             price: 100,
             img: dSword,
-            isPicked: false,
         },
         {
+            isPicked: false,
             id: 1,
             name: "Алмазный топор",
             count: 0,
             price: 80,
             img: dAxe,
-            isPicked: false,
         },
         {
+            isPicked: false,
             id: 2,
             name: "Золотой меч",
             count: 0,
             price: 70,
             img: gSword,
-            isPicked: false,
         },
         {
+            isPicked: false,
             id: 3,
             name: "Золотой топор",
             count: 0,
             price: 50,
             img: gAxe,
-            isPicked: false,
         },
     ],
 
@@ -73,6 +75,7 @@ const storeReducer = (state = initialState, action) => {
                         isPicked: true
                     }): {...item}
                 ),
+                isChecked: true,
                 totalPrice: action.countPrice + state.totalPrice
             }
         }
@@ -98,8 +101,13 @@ const storeReducer = (state = initialState, action) => {
                         isPicked: false
                     }): {...item}
                 ),
-
                 totalPrice: state.totalPrice - action.count * action.countPrice
+            }
+        }
+        case TOGGLE_IS_CHECKING: {
+            return {
+                ...state,
+                isChecked: action.isChecked
             }
         }
 
@@ -112,6 +120,7 @@ export const setStoreData = (store) => ({type: GET_STORE_DATA, store})
 export const addItemCount = (id, countPrice) => ({type: ADD_ITEM_COUNT, id, countPrice})
 export const removeItemsCount = (id, countPrice) => ({type: REMOVE_ITEMS_COUNT, id, countPrice})
 export const deleteItem = (id, countPrice, count) => ({type: DELETE_ITEM, id, countPrice, count})
+export const toggleIsChecking = (isChecked) => ({type: TOGGLE_IS_CHECKING, isChecked})
 
 export const getStoreData = (storeId) => { //Информация о магазине конкретного сервера
     return async (dispatch) => {

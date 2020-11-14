@@ -15,7 +15,7 @@ const Top = (props) => {
                 </div>
             </div>
             <div className={s.cart}>
-                <div className={s.checked}></div>
+                {props.isChecked && <div className={s.checked}></div>}
                 <NavLink to={'/cart'} className={s.cartContainer}>
                     <img src={cart} alt='cart'/>
                 </NavLink>

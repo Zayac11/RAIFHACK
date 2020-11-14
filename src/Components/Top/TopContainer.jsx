@@ -3,17 +3,20 @@ import {connect} from "react-redux";
 import Top from "./Top";
 
 class TopContainer extends React.Component {
+
+
+
     render() {
         return (
-            <Top />
+            <Top isChecked={this.props.isChecked} />
         )
     }
 }
 
 let mapStateToProps = (state) => {
     return {
-
+        isChecked: state.shop.isChecked
     }
 }
 
-export default connect(mapStateToProps, {mapStateToProps})(TopContainer)
+export default connect(mapStateToProps, {})(TopContainer)

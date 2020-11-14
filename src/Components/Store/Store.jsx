@@ -2,13 +2,8 @@ import '../../plugins/script.js'
 import React from 'react'
 import s from './Store.module.css'
 import StoreItem from "./StoreItem/StoreItem";
-// import {PaymentPageSdk} from '../../ecom-payment-sdk/src/index'
 
 const Store = (props) => {
-
-    // const paymentPage = new PaymentPageSdk('000001680200002-80200002', {
-    //     url: 'https://test.ecom.raiffeisen.ru/pay'
-    // });
 
     return (
         <div className={s.store}>
@@ -21,10 +16,10 @@ const Store = (props) => {
             </div>
 
             <div className={s.itemsContainer}>
-                <StoreItem />
-                <StoreItem />
-                <StoreItem />
-                <StoreItem />
+
+                {props.items.map(i => <StoreItem addItemCount={props.addItemCount}
+                                                 id={i.id} key={i.id} name={i.name} count={i.count}
+                                                 price={i.price} img={i.img} />)}
             </div>
 
         </div>

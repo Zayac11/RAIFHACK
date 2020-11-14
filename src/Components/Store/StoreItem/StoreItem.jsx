@@ -7,19 +7,18 @@ const StoreItem = (props) => {
     return (
         <div className={s.itemContainer}>
             <div className={s.itemImg}>
-                <img src={add} alt="item"/>
+                <img src={props.img} alt="item"/>
             </div>
             <div className={s.name}>
-                Название
+                {props.name}
             </div>
             <div className={s.price}>
                 <div>
-                    100р
+                    {props.price}р
                 </div>
-                <button>
+                <button onClick={() => props.addItemCount(props.id, props.price)}>
                     <img src={add} alt="add"/>
                 </button>
-
 
             </div>
         </div>

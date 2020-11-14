@@ -16,6 +16,7 @@ const Cart = (props) => {
 
             <div className={s.cartItemsContainer}>
 
+
                 {props.items.map(i => i.isPicked && <CartItem addItemCount={props.addItemCount}
                                                     deleteItem={props.deleteItem}
                                                     removeItemsCount={props.removeItemsCount}
