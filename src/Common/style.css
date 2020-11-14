@@ -1,13 +1,13 @@
 .outer {
     width: 100%;
     background-color: #ccc;
+    height: 150vh;
 }
 
 .container {
     max-width: 500px;
-    background-color: white;
+    background-color: #fbfbfb;
     border: 1px solid black;
     margin: 0 auto;
-    height: 200vh;
     padding: 10px;
 }

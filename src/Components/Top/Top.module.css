@@ -1,0 +1,47 @@
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+}
+
+.info {
+    display: flex;
+}
+
+.nameContainer {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.system {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.minecraft {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart {
+    margin-right: 10px;
+}
+
+.cart img {
+    cursor: pointer;
+}
+
+.checked {
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    margin: 0 0 0 auto;
+    background-color: #dc3545;
+}
