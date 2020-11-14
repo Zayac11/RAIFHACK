@@ -5,6 +5,8 @@
 .title {
     margin: 10px auto 20px;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .itemsContainer {
@@ -12,4 +14,11 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 10px;
+}
+
+.catalog {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.5;
+    margin-bottom: 15px;
 }

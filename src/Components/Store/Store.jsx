@@ -3,9 +3,10 @@ import React from 'react'
 import s from './Store.module.css'
 import StoreItem from "./StoreItem/StoreItem";
 
+
+
 const Store = (props) => {
 
-   //Ебаная библиотека не подключается
 
     return (
         <div className={s.store}>
@@ -13,7 +14,13 @@ const Store = (props) => {
                 {props.name}
             </h2>
 
+            <div className={s.catalog}>
+                Каталог товаров
+            </div>
+
             <div className={s.itemsContainer}>
+                <StoreItem />
+                <StoreItem />
                 <StoreItem />
                 <StoreItem />
             </div>
