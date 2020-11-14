@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from "react-redux";
-import MainContainer from "../Main/ProductContainer";
 import '../../Common/style.css'
 import {Route} from "react-router-dom";
+import ProductContainer from "../Product/ProductContainer";
+import StoreContainer from "../Store/StoreContainer";
 
 class Container extends React.Component {
 
@@ -14,7 +15,8 @@ class Container extends React.Component {
         return (
             <div className='outer'>
                 <div className='container'>
-                    <Route exact path={'/products/:id'} render={ () => <MainContainer /> }/>
+                    <Route exact path={'/products/:id'} render={ () => <ProductContainer /> }/>
+                    <Route exact path={'/stores/:id'} render={ () => <StoreContainer /> }/>
                 </div>
             </div>
         )

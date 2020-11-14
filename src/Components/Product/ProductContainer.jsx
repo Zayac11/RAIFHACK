@@ -33,5 +33,4 @@ let mapStateToProps = (state) => {
 
 let WithProductContainer = withRouter(ProductContainer);
 
-
 export default connect(mapStateToProps, {getProductData})(WithProductContainer)

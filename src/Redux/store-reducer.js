@@ -1,23 +1,40 @@
-import {stadiumApi} from "../api/api";
+import {storeApi} from "../api/api";
+
+const GET_STORE_DATA = 'GET_STORE_DATA'
 
 let initialState = {
-
+    id: 0,
+    name: "",
+    email: "",
 }
 
-const stadiumReducer = (state = initialState, action) => {
+const storeReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case GET_STORE_DATA: {
+            return {
+                ...state,
+                id: action.store.id,
+                name: action.store.name,
+                email: action.store.email,
+            }
+        }
 
         default:
             return state;
     }
 }
 
-export const setStadiumData = () => ({type: "type"})
+export const setStoreData = (store) => ({type: GET_STORE_DATA, store})
 
-export const getStadiumsData = (stadiumId) => { //Информация о стадионе
-    return (dispatch) => {
+export const getStoreData = (storeId) => { //Информация о магазине конкретного сервера
+    return async (dispatch) => {
+        let response = await storeApi.getStoreData(storeId)
 
+        if (response.status === 200) {
+            dispatch(setStoreData(response.data))
+        }
     }
 }
 
-export default stadiumReducer;
+export default storeReducer;

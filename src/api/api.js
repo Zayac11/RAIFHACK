@@ -16,5 +16,8 @@ export const productApi = {
 }
 
 export const storeApi = {
-
+    getStoreData(id) {
+        return instance.get(`api/stores/${id}`)
+            .then(response => response)
+    }
 }
