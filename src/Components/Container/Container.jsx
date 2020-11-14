@@ -5,6 +5,7 @@ import {Route} from "react-router-dom";
 import ProductContainer from "../Product/ProductContainer";
 import StoreContainer from "../Store/StoreContainer";
 import TopContainer from "../Top/TopContainer";
+import CartContainer from "../Cart/CartContainer";
 
 class Container extends React.Component {
 
@@ -19,6 +20,7 @@ class Container extends React.Component {
                     <TopContainer />
                     <Route exact path={'/products/:id'} render={ () => <ProductContainer /> }/>
                     <Route exact path={'/stores/:id'} render={ () => <StoreContainer /> }/>
+                    <Route exact path={'/cart'} render={ () => <CartContainer /> }/>
                 </div>
             </div>
         )
