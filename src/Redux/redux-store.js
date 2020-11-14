@@ -1,8 +1,10 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunkMiddleware from 'redux-thunk';
+import productReducer from './product-reducer'
+
 
 let reducers = combineReducers({
-
+    product: productReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

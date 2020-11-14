@@ -1,0 +1,12 @@
+.outer {
+    width: 100%;
+    background-color: #ccc;
+}
+
+.container {
+    max-width: 500px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 auto;
+    height: 200vh;
+}

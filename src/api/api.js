@@ -8,10 +8,13 @@ let instance = axios.create({
     // }
 })
 
-export const arenasApi = {
-
+export const productApi = {
+    getProductData(id) { //Get info about product
+        return instance.get(`api/products/${id}`)
+            .then(response => response)
+    },
 }
 
-export const stadiumApi = {
+export const storeApi = {
 
 }
