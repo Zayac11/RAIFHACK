@@ -3,7 +3,7 @@ import s from './OneClickButton.module.css'
 
 const OneClickButton = (props) => {
     return (
-        <button className={s.button}>
+        <button onClick={props.success} className={s.button}>
             {props.message}
         </button>
     )

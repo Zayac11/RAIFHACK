@@ -9,6 +9,7 @@ const GET_STORE_DATA = 'GET_STORE_DATA'
 const REMOVE_ITEMS_COUNT = 'REMOVE_ITEM_COUNT'
 const DELETE_ITEM = 'DELETE_ITEM'
 const TOGGLE_IS_CHECKING = 'TOGGLE_IS_CHECKING'
+const DELETE_ALL_ITEMS = 'DELETE_ALL_ITEMS'
 
 let initialState = {
     id: 0,
@@ -104,6 +105,19 @@ const storeReducer = (state = initialState, action) => {
                 totalPrice: state.totalPrice - action.count * action.countPrice
             }
         }
+        case DELETE_ALL_ITEMS: {
+            return {
+                ...state,
+                items: state.items.map(item =>
+                    ({
+                        ...item,
+                        count: 0,
+                        isPicked: false
+                    })
+                ),
+                totalPrice: 0
+            }
+        }
         case TOGGLE_IS_CHECKING: {
             return {
                 ...state,
@@ -121,6 +135,7 @@ export const addItemCount = (id, countPrice) => ({type: ADD_ITEM_COUNT, id, coun
 export const removeItemsCount = (id, countPrice) => ({type: REMOVE_ITEMS_COUNT, id, countPrice})
 export const deleteItem = (id, countPrice, count) => ({type: DELETE_ITEM, id, countPrice, count})
 export const toggleIsChecking = (isChecked) => ({type: TOGGLE_IS_CHECKING, isChecked})
+export const deleteAllItems = () => ({type: DELETE_ALL_ITEMS})
 
 export const getStoreData = (storeId) => { //Информация о магазине конкретного сервера
     return async (dispatch) => {

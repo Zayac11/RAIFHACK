@@ -33,3 +33,16 @@
 .footer {
     padding-bottom: 40px;
 }
+
+.CustomModal {
+    background-color: #fff22d;
+    position: relative;
+    max-width: 550px;
+    min-width: 320px;
+    width: auto;
+    height: 100%;
+    padding: 18px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}

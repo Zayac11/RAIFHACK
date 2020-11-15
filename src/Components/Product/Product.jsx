@@ -43,7 +43,7 @@ const Product = (props) => {
                     <img src={plus} alt="add"/> Добавить в корзину
                 </button>
 
-                <NavLink to='#' className={s.footer}>
+                <NavLink to='/stores/1' className={s.footer}>
                     Перейти в магазин
                 </NavLink>
             </div>

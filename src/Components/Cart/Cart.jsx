@@ -1,9 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import s from "./Cart.module.css";
 import CartItem from "./CartItem/CartItem";
 import OneClickButton from "../../Common/OneClickButton/OneClickButton";
+import Popup from "../../Common/Popup/Popup";
+import Modal from "react-png-modal";
 
 const Cart = (props) => {
+
+    const [bIsModalOpen, setIsModalOpen] = useState(false);
+
+    const success = () => {
+        setIsModalOpen(true);
+        props.deleteAllItems()
+    }
+
     return (
         <div>
             <h2 className={s.title}>
@@ -33,7 +43,7 @@ const Cart = (props) => {
                     </div>
                 </div>
 
-                <OneClickButton message='Оплатить в один клик' />
+                <OneClickButton success={success} message='Оплатить' />
 
                 <div className={s.footer}>
 
@@ -41,7 +51,13 @@ const Cart = (props) => {
 
             </div>
 
-
+            <Modal
+                center
+                className={s.CustomModal}
+                closeModal={() => setIsModalOpen(false)}
+                open={bIsModalOpen}>
+                <Popup />
+            </Modal>
 
         </div>
     )

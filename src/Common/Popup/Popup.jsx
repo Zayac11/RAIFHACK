@@ -1,10 +1,15 @@
 import React from 'react'
+import s from './Popup.module.css'
+import raif from '../../Assets/images/raiffeisen-1.png'
 
 const Popup = (props) => {
     return (
-        <div>
-            Popup
-        </div>
+        <>
+            <img className={s.raif} src={raif} alt="raiffeisen"/>
+            <div className={s.popup}>
+                Оплата проведена успешно!
+            </div>
+        </>
     )
 }
 

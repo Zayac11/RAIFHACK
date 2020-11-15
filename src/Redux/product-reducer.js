@@ -12,6 +12,7 @@ let initialState = {
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PRODUCT_DATA: {
+        }
             return {
                 ...state,
                 id:action.product.id,
@@ -19,7 +20,6 @@ const productReducer = (state = initialState, action) => {
                 name: action.product.name,
                 price: action.product.price,
             }
-        }
         default:
             return state;
     }

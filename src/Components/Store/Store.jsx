@@ -1,4 +1,3 @@
-import '../../plugins/script.js'
 import React from 'react'
 import s from './Store.module.css'
 import StoreItem from "./StoreItem/StoreItem";

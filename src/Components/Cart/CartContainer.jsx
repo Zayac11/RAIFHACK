@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import Cart from "./Cart";
 
 
-import {addItemCount, deleteItem, removeItemsCount, toggleIsChecking} from "../../Redux/store-reducer";
+import {addItemCount, deleteAllItems, deleteItem, removeItemsCount, toggleIsChecking} from "../../Redux/store-reducer";
 
 class CartContainer extends React.Component {
 
@@ -23,7 +23,8 @@ class CartContainer extends React.Component {
                   deleteItem={this.props.deleteItem}
                   addItemCount={this.props.addItemCount}
                   removeItemsCount={this.props.removeItemsCount}
-                  totalPrice={this.props.totalPrice}/>
+                  totalPrice={this.props.totalPrice}
+                  deleteAllItems={this.props.deleteAllItems}/>
         )
     }
 }
@@ -36,4 +37,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {addItemCount, removeItemsCount, deleteItem, toggleIsChecking})(CartContainer)
+export default connect(mapStateToProps, {addItemCount, removeItemsCount, deleteItem, toggleIsChecking, deleteAllItems})(CartContainer)
